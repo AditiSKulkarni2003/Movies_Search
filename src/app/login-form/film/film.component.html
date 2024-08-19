@@ -1,0 +1,12 @@
+<div class="film-card">
+  <img [src]="film.poster" alt="{{ film.title }}" class="poster"/>
+  <div class="card-content">
+    <h3 class="title">{{ film.title }}</h3>
+    <span *ngIf="film.metaScore >= 90">★★★★★</span>
+    <p><strong>Released:</strong> {{ film.released }}</p>
+    <p><strong>Director:</strong> {{ film.director }}</p>
+    <p><strong>Actors:</strong> {{ film.actors }}</p>
+    <p><strong>Plot:</strong> {{ film.plot }}</p>
+    <p><strong>Metascore:</strong> {{ film.metaScore }}</p>
+  </div>
+</div>

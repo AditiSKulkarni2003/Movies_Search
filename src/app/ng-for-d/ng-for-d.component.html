@@ -1,0 +1,14 @@
+<!-- Using ng-container to combine *ngIf and *ngFor without adding extra HTML -->
+<div class="books"><ng-container *ngIf="showBooks">
+    <div *ngFor="let book of books; 
+    let i = index;
+     let isEven = even">
+      <!-- Display the index and whether it is even or odd -->
+      <p>
+        {{ i }}: {{ book.title }} by {{ book.author }}
+        <span *ngIf="isEven"> (Even index)</span>
+        <span *ngIf="!isEven"> (Odd index)</span>
+      </p>
+    </div>
+  </ng-container></div>
+  

@@ -1,0 +1,97 @@
+<!-- eslint-disable @angular-eslint/template/alt-text -->
+<!--<div class="form-container">
+
+    <form id="login-form" *ngIf="!loggedIn; else Films"(onsubmit)="login()">
+    <h1>Authentication</h1>
+    <p>Fill out this form to login</p>
+
+    <label for="email">Email</label>
+    <input type="email"  placeholder="Enter your email" [(ngModel)]="email"  name="email" required/>
+
+    <label for="pass">Password</label>
+    <input type="password" placeholder="Enter your Password" [(ngModel)]="pass" name="pass" required/>
+
+    <button type="submit" (click)="login()">Submit</button>
+
+
+
+</form>
+
+<ng-template #Films>
+    <div class="films-container">
+        <div *ngFor="let film of films" class="film-card">
+            <img [src]="film.poster" alt="{{ film.title }}" class="poster"/>
+            <div class="card-Content">
+              <h3 class="title">{{ film.title }}</h3>
+              <span *ngIf="film.metascore >=90">★★★★★</span>
+              <p><strong>Released:</strong> {{ film.released }}</p>
+              <p><strong>Director:</strong> {{ film.director }}</p>
+              <p><strong>Actors:</strong> {{ film.actors }}</p>
+              <p><strong>Plot:</strong> {{ film.plot }}</p>
+              <p><strong>Metascore:</strong> {{ film.metascore }}</p>
+
+            </div>
+
+
+          </div>
+
+
+        </div>-->
+<!---<ul class="films">
+    <li class="film card">
+        <img class="poster"  src="https://cdn.britannica.com/66/153166-050-0B0D3C10/Titanic-Queenstown-Ireland-April-11-1912.jpg">
+
+
+      <div>
+        <p class="title">
+          Titanic
+          <span class="rating">★★★★</span>
+        </p>
+        <dl>
+          <dt>Release date</dt>
+          <dd>07/01/1998</dd>
+          <dt>Director</dt>
+          <dd>James Cameron</dd>
+          <dt>Actors</dt>
+          <dd>Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates</dd>
+        </dl>
+        <p class="plot">
+          84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the
+          story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine,
+          Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in
+          April 10th 1912, on a ship called Titanic when young Rose boards the
+          departing ship with the upper-class passengers and her mother, Ruth DeWitt
+          Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist
+          named Jack Dawson and his best friend Fabrizio De Rossi win third-class
+          tickets to the ship in a game. And she explains the whole story from
+          departure until the death of Titanic on its first and last voyage April
+          15th, 1912 at 2:20 in the morning.
+        </p>
+      </div>
+    </li>
+  </ul>-->
+  <!-- <ng-template #Films>
+    <div class="films-container">
+      <app-film *ngFor="let film of films" [film]="film"></app-film>
+    </div>
+  </ng-template> -->
+
+  <div class="form-container" routerLink="login">
+    <form id="login-form" *ngIf="!res" (ngSubmit)="login()">
+      <h1>Authentication</h1>
+      <p>Fill out this form to login</p>
+
+      <label for="email ">Email</label>
+      <input type="email" placeholder="Enter your email" [(ngModel)]="credentials.email" name="email" required />
+
+      <label for="pass">Password</label>
+      <input type="password" placeholder="Enter your Password" [(ngModel)]="credentials.pass" name="pass" required />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <app-film-search *ngIf="res"></app-film-search>
+    
+  </div>
+  
+

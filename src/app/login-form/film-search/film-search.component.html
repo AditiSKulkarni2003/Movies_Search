@@ -1,0 +1,23 @@
+<div class="search-container" routerLink="search">
+  
+  <form (ngSubmit)="searchFilms()" style="display: flex; align-items: center;">
+       <label for="search" style="margin-right: 10px;"><h3>Search:</h3></label>
+
+          <input type="text" name="title" [(ngModel)]="searchTerm" placeholder=" Enter film title here "/>
+
+          <button type="submit">Search</button>
+          
+<button *ngIf="loggedIn" (click)="onLogout()">Logout</button>
+
+
+               
+  </form>
+
+ 
+</div>
+
+<div *ngFor="let film of filteredFilms" class="film-container">
+  <app-film [film]="film"></app-film>
+  </div>
+
+ 
